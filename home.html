@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- font awesome cdn -->
 </head>
-<body class="bg-[#f4f5f7] ">
+<body class="bg-[#f4f5f7] flex flex-col justify-center items-center h-[100vh]">
   <!-- Header section Starts here -->
   <header class="max-w-[350px] mx-auto bg-white rounded-b-xl">
     <nav class="flex justify-between items-center min-h-[50px] p-2 border-b-[1.5px] border-[#dbdada]">
@@ -35,11 +35,11 @@
     </section>
     <section class="feature_section pb-3">
       <div class="card_container grid grid-cols-3 gap-3 px-3">
-          <div class="card border-[1.9px] border-gray-300 flex justify-center items-center hover:bg-[#dddbdb] py-2 cursor-pointer active:scale-95">
+        <div id="add_money_div" class="card border-[1.9px] border-gray-300 flex justify-center items-center hover:bg-[#dddbdb] py-2 cursor-pointer active:scale-95">
           <img src="./assets/wallet1.png" alt="add_money_image" class="w-[20px] mb-1">
           <p class="text-[12px] text-[#424242] font-semibold">Add Money</p>
         </div>
-        <div class="card border-[1.9px] border-gray-300 flex justify-center items-center hover:bg-[#dddbdb] py-2 cursor-pointer active:scale-95">
+        <div id="cash_out_div" class="card border-[1.9px] border-gray-300 flex justify-center items-center hover:bg-[#dddbdb] py-2 cursor-pointer active:scale-95">
           <img src="./assets/send1.png" alt="CashOut_image" class="w-[20px] mb-1">
           <p class="text-[12px] text-[#424242] font-semibold">CashOut</p>
         </div>
@@ -64,9 +64,10 @@
   </header>
   <!-- header section ends here -->
   <!-- main section starts here -->
-  <main class="max-w-[350px] mx-auto">
+  <main class="all_form_section w-[350px] mx-auto">
+    <section id="add_money_parent_section" style="display: none;">
     <h3 class="font-bold ml-1 my-1">Add Money</h3>
-    <section class="add_money_section bg-white rounded-xl p-4">
+    <div class=" bg-white rounded-xl p-4">
       <div>
         <form>
           <div class="w-[97%] mx-auto mb-1">
@@ -99,13 +100,41 @@
           <div class="w-[97%] mx-auto">
             <label for="" class="text-[14px]">Pin Number</label>
             <br>
-            <input id="pin_number" type="text" placeholder="Enter Your Pin Number" class="input bg-[#F4F5F7] mb-3 mt-[4px] w-full rounded-3xl text-[14px] border-[#838181]" maxlength="4"/>
+            <input id="pin_number" type="text" placeholder="Enter 4 digit Pin Number" class="input bg-[#F4F5F7] mb-3 mt-[4px] w-full rounded-3xl text-[14px] border-[#838181]" maxlength="4"/>
           </div>
           <div class="w-[97%] mx-auto">
             <button id="add_money_btn" class="btn bg-[#0874f2] rounded-3xl text-white w-full active:scale-95">Add Money</button>
           </div>
         </form>
       </div>
+    </div>
+    </section>
+    <section id="cash_out_parent_section" style="display: none;">
+    <h3 class="font-bold ml-1 my-1">Cash Out</h3>
+    <div class=" bg-white rounded-xl p-4">
+      <div>
+        <form>
+          <div class="w-[97%] mx-auto">
+            <label for="" class="text-[14px]">Agent Number</label>
+            <br>
+            <input id="agent_account_number" type="text" placeholder="Enter 11 Digit Number" class="input bg-[#F4F5F7] mb-2 mt-[4px] rounded-3xl text-[14px] w-full font-medium border-[#838181]" />
+          </div>
+          <div class="w-[97%] mx-auto">
+            <label for="" class="text-[14px]" >Amount</label>
+            <br>
+            <input id="amount_to_withdraw" type="text" placeholder="Enter amount to withdraw" class=" input bg-[#F4F5F7] mb-2 mt-[4px] w-full rounded-3xl text-[14px] border-[#838181]"/>
+          </div>
+          <div class="w-[97%] mx-auto">
+            <label for="" class="text-[14px]">Pin Number</label>
+            <br>
+            <input id="withdraw_pin_number" type="text" placeholder="Enter 4 digit Pin Number" class="input bg-[#F4F5F7] mb-3 mt-[4px] w-full rounded-3xl text-[14px] border-[#838181]" maxlength="4"/>
+          </div>
+          <div class="w-[97%] mx-auto">
+            <button id="withdraw_money_btn" class="btn bg-[#0874f2] rounded-3xl text-white w-full active:scale-95">Withdraw Money</button>
+          </div>
+        </form>
+      </div>
+    </div>
     </section>
   </main>
   <!-- main section starts here -->
