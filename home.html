@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- font awesome cdn -->
 </head>
-<body class="bg-[#f4f5f7] h-[100vh]">
+<body class="bg-[#f4f5f7] ">
   <!-- Header section Starts here -->
   <header class="max-w-[350px] mx-auto bg-white rounded-b-xl">
     <nav class="flex justify-between items-center min-h-[50px] p-2 border-b-[1.5px] border-[#dbdada]">
@@ -65,15 +65,15 @@
   <!-- header section ends here -->
   <!-- main section starts here -->
   <main class="max-w-[350px] mx-auto">
-    <h3 class="font-bold ml-1">Add Money</h3>
-    <section class="add_money_section bg-white rounded-xl p-2">
+    <h3 class="font-bold ml-1 my-1">Add Money</h3>
+    <section class="add_money_section bg-white rounded-xl p-4">
       <div>
         <form>
-          <div class="w-[97%] mx-auto">
+          <div class="w-[97%] mx-auto mb-1">
             <label for="" class="text-[14px]">Select a Bank</label>
             <br>
-            <select id="" class="w-full mb-2 mt-[4px] rounded-3xl text-[14px] p-1 bg-[#F4F5F7] pl-3 text-[#838181] ">
-              <option class="text-[#909192]" disabled selected>Select Bank</option>
+            <select class="select bg-[#F4F5F7] border-[#838181] rounded-3xl mt-1">
+              <option disabled selected >Select Bank</option>
               <option>Sonali Bank</option>
               <option>Dutch Bangla Bank</option>
               <option>Islami Bank</option>
@@ -89,20 +89,20 @@
           <div class="w-[97%] mx-auto">
             <label for="" class="text-[14px]">Bank Account Number</label>
             <br>
-            <input id="numberInput" type="text" placeholder="Enter 11 Digit Account Number" class=" bg-[#F4F5F7] mb-2 mt-[4px] rounded-3xl text-[14px] pl-3 w-full font-medium p-1 outline-0 border-[#838181]" />
+            <input id="numberInput" type="text" placeholder="Enter 11 Digit Account Number" class="input bg-[#F4F5F7] mb-2 mt-[4px] rounded-3xl text-[14px] w-full font-medium border-[#838181]" />
           </div>
           <div class="w-[97%] mx-auto">
             <label for="" class="text-[14px]" >Amount to Add</label>
             <br>
-            <input id="numberInput" type="text" placeholder="Enter Your Number" class=" bg-[#F4F5F7] mb-2 mt-[4px] w-full rounded-3xl text-[14px] pl-3 font-medium p-1 outline-0 border-[#838181]" />
+            <input id="numberInput" type="text" placeholder="Enter Your Number" class=" input bg-[#F4F5F7] mb-2 mt-[4px] w-full rounded-3xl text-[14px] border-[#838181]" />
           </div>
           <div class="w-[97%] mx-auto">
             <label for="" class="text-[14px]">Pin Number</label>
             <br>
-            <input id="numberInput" type="text" placeholder="Enter Your Number" class=" bg-[#F4F5F7] mb-3 mt-[4px] w-full rounded-3xl text-[14px] pl-3 font-medium p-1 outline-0 border-[#838181]" />
+            <input id="numberInput" type="text" placeholder="Enter Your Number" class="input bg-[#F4F5F7] mb-3 mt-[4px] w-full rounded-3xl text-[14px] border-[#838181]" />
           </div>
           <div class="w-[97%] mx-auto">
-            <button id="addMoney" class="py-1 cursor-pointer bg-[#0874f2] active:bg-[#0c417e] rounded-3xl text-white w-full">Add Money</button>
+            <button id="addMoney" class="btn bg-[#0874f2] rounded-3xl text-white w-full">Add Money</button>
           </div>
         </form>
       </div>
