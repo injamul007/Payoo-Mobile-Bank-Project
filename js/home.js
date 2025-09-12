@@ -57,7 +57,12 @@ document.getElementById('withdraw_money_btn').addEventListener('click', function
   }
 
   const totalNewAvailableBalance = availableBalance - amountToWithdraw;
-  document.getElementById('available_balance').innerText = totalNewAvailableBalance;
+  
+  if(totalNewAvailableBalance <= 0) {
+    alert('Your Balance is 0');
+  } else {
+    document.getElementById('available_balance').innerText = totalNewAvailableBalance;
+  }
 })
 
 
