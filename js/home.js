@@ -19,6 +19,21 @@ function getInputValue(id) {
   return inputFieldValue;
 };
 
+//? functions to get innerText
+function getInnerText(id) {
+  const availableBalance = document.getElementById(id);
+  const availableBalanceInnerText = availableBalance.innerText;
+  const availableBalanceInnerTextNumber = parseInt(availableBalanceInnerText)
+  return availableBalanceInnerTextNumber;
+};
+
+//? function to set innerText
+function setInnerText(value) {
+  const availableBalance = document.getElementById('available_balance');
+  availableBalance.innerText = value;
+  return availableBalance;
+}
+
 //? store pin number in a variable bcz don't have db
 const validPinNumber = 8090;
 
@@ -34,7 +49,7 @@ document.getElementById('add_money_btn').addEventListener('click', function(e) {
 
   const pinNumber = getInputValueNumber('pin_number');
   
-  const availableBalance = parseInt(document.getElementById('available_balance').innerText);
+  const availableBalance = getInnerText('available_balance');
   
   if (!(bankName) || bankName === 'Select Bank') {
     alert('Please Select a Bank Name');
@@ -49,8 +64,9 @@ document.getElementById('add_money_btn').addEventListener('click', function(e) {
     alert('Please Provide a Valid Pin Number');
     return;
   }
-  const totalNewAvailableBalance = availableBalance+amountToAdd;
-  document.getElementById('available_balance').innerText = totalNewAvailableBalance;
+  const totalNewAvailableBalance = availableBalance + amountToAdd;
+
+  setInnerText(totalNewAvailableBalance);
   
 })
 
@@ -58,13 +74,13 @@ document.getElementById('add_money_btn').addEventListener('click', function(e) {
 //? addEventListener to Withdraw money button
 document.getElementById('withdraw_money_btn').addEventListener('click', function(e) {
   e.preventDefault();
-  const agentAccountNumber = document.getElementById('agent_account_number').value;
+  const agentAccountNumber = getInputValue('agent_account_number');
 
   const amountToWithdraw = getInputValueNumber('amount_to_withdraw');
 
   const withdrawPinNumber = getInputValueNumber('withdraw_pin_number');
   
-  const availableBalance = parseInt(document.getElementById('available_balance').innerText);
+  const availableBalance = getInnerText('available_balance');
   
   if(!(agentAccountNumber) || (agentAccountNumber.length < 11)) {
     alert('Please Provide a Valid Agent Account Number');
@@ -83,7 +99,7 @@ document.getElementById('withdraw_money_btn').addEventListener('click', function
     if(amountToWithdraw > availableBalance) {
       alert('withdraw amount is higher than main balance');
     } else {
-    document.getElementById('available_balance').innerText = totalNewAvailableBalance;
+    setInnerText(totalNewAvailableBalance);
   }
 })
 
