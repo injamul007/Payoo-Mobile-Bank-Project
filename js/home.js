@@ -5,16 +5,34 @@ const logOutBtn = document.getElementById('logOutBtn').addEventListener('click',
   window.location.href = './index.html';
 })
 
+//? function to get input values
+function getInputValueNumber(id) {
+  const inputField = document.getElementById(id);
+  const inputFieldValue = inputField.value;
+  const inputFieldValueNumber = parseInt(inputFieldValue);
+  return inputFieldValueNumber;
+};
+
+function getInputValue(id) {
+  const inputField = document.getElementById(id);
+  const inputFieldValue = inputField.value;
+  return inputFieldValue;
+};
+
 //? store pin number in a variable bcz don't have db
 const validPinNumber = 8090;
 
+//? add money feature
 //? addEventListener to add money button
 document.getElementById('add_money_btn').addEventListener('click', function(e) {
   e.preventDefault();
-  const bankName = document.getElementById('select_bank').value;
-  const bankAccountNumber = document.getElementById('bank_account_number').value;
-  const amountToAdd = parseInt(document.getElementById('amount_to_add').value);
-  const pinNumber = parseInt(document.getElementById('pin_number').value);
+  const bankName = getInputValue('select_bank');
+
+  const bankAccountNumber = getInputValue('bank_account_number');
+
+  const amountToAdd = getInputValueNumber('amount_to_add');
+
+  const pinNumber = getInputValueNumber('pin_number');
   
   const availableBalance = parseInt(document.getElementById('available_balance').innerText);
   
@@ -36,12 +54,15 @@ document.getElementById('add_money_btn').addEventListener('click', function(e) {
   
 })
 
+//? cash Out feature
 //? addEventListener to Withdraw money button
 document.getElementById('withdraw_money_btn').addEventListener('click', function(e) {
   e.preventDefault();
   const agentAccountNumber = document.getElementById('agent_account_number').value;
-  const amountToWithdraw = parseInt(document.getElementById('amount_to_withdraw').value);
-  const withdrawPinNumber = parseInt(document.getElementById('withdraw_pin_number').value);
+
+  const amountToWithdraw = getInputValueNumber('amount_to_withdraw');
+
+  const withdrawPinNumber = getInputValueNumber('withdraw_pin_number');
   
   const availableBalance = parseInt(document.getElementById('available_balance').innerText);
   
@@ -58,7 +79,7 @@ document.getElementById('withdraw_money_btn').addEventListener('click', function
 
   const totalNewAvailableBalance = availableBalance - amountToWithdraw;
   
-  //?Validation check for main balance is less than 0 withdraw not possible;
+  //?Validation check if main balance is less than 0 then withdraw not possible;
     if(amountToWithdraw > availableBalance) {
       alert('withdraw amount is higher than main balance');
     } else {
